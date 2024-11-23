@@ -1,14 +1,12 @@
-// const setData= new Set([]);
+const setData= new Set([]);
 
-// setData.add(100)
-// setData.add(101)
-// setData.add(102)
+setData.add(100)
+setData.add(101)
+setData.add(102)
 
-// setData.forEach((nm, inx, arr)=>{
-//     console.log(nm);
-// }) // set use for unique value
-//.......................................
-
+setData.forEach((nm, inx, arr)=>{
+    console.log(nm);
+}) // set use for unique value
 
 const setMap= new Map();
 
@@ -29,6 +27,6 @@ myArr.push(['gender', 'male'])
 myArr.push(['lang', 'bnagla'])
 const makreObj= Object.fromEntries(myArr); // // array to object converted by default method
 
-// myArr.forEach(([key, value]) => {
-//      newObj[key]=value;
-//     }); // array to object converted by forEach
+myArr.forEach(([key, value]) => {
+     newObj[key]=value;
+    }); // array to object converted by forEach

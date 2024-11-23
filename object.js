@@ -1,36 +1,33 @@
 // Declare new object.........
 const obj = { name: 'bean', age: 56, gender: 'male' };
 
-// Add method to object
-// obj.personInfo = function() {
-//   const gtype = this.gender.toLowerCase() === 'male' ? 'He' : this.gender.toLowerCase() === 'female' ? 'She' : 'He/She';
-//   return `Name is ${this.name} and ${gtype} is ${this.age} years old`;
-// };
+obj.personInfo = function() {
+  const gtype = this.gender.toLowerCase() === 'male' ? 'He' : this.gender.toLowerCase() === 'female' ? 'She' : 'He/She';
+  return `Name is ${this.name} and ${gtype} is ${this.age} years old`;
+};
 
-// Call the method
-// console.log(obj.personInfo());
+console.log(obj.personInfo());
 
 
 
-// swtich ................
-// try{
-// switch(obj.name){
-// case 'bean': var res = 'Bean is a funny man';
-// break;
-// default: throw new Array('Bean was not find...')
-// }
-// console.log(res);
+try{
+switch(obj.name){
+case 'bean': var res = 'Bean is a funny man';
+break;
+default: throw new Array('Bean was not find...')
+}
+console.log(res);
 
-// }
-// catch(err){
-//     console.log(err);
+}
+catch(err){
+    console.log(err);
     
-// }
+}
 
 
-// for(let x in obj){
-//     console.log(x, obj[x])
-// }
+for(let x in obj){
+    console.log(x, obj[x])
+}
 
 const objEntries= Object.entries(obj)[0][1] // convert obj to array
 const objKeys= Object.keys(obj) // convert obj to array

@@ -19,17 +19,17 @@ export {demoText, xnull} // use for mjs multiple export
 
 
 
-// // common js/ cjs module exports
-// module.export = {
-//     def: function(){
-//     console.log('hello def');
+// common js/ cjs module exports
+module.export = {
+    def: function(){
+    console.log('hello def');
     
-// }, // use for cjs single export 
+}, // use for cjs single export 
 
-//  def2: function(){
-//     console.log('hello def2');
+ def2: function(){
+    console.log('hello def2');
     
-// } // use for cjs single export
-// }
+} // use for cjs single export
+}
 
-// module.exports = {demoText, xnull} // use for cjs multiple export
+module.exports = {demoText, xnull} // use for cjs multiple export

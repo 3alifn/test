@@ -14,71 +14,71 @@ path.resolve() // return current working directory
 path.join(file, file) // merge 2two files path
 
 
-// fs.realpath(file, (err, info)=>{
-//     if(err) console.error(err);
-//     else console.log(info);
+fs.realpath(file, (err, info)=>{
+    if(err) console.error(err);
+    else console.log(info);
     
     
     
-// })
+})
 
-// fs.writeFile(path.join(dir, 'test.txt'), "we", (err)=>{
-//     if(err) console.error(err);
-//     else console.log('worked...');
+fs.writeFile(path.join(dir, 'test.txt'), "we", (err)=>{
+    if(err) console.error(err);
+    else console.log('worked...');
     
     
-// })
+})
 
-// fs.watchFile(file, (curr, prev) => { 
-//     console.log('File Changed'); 
-//     console.log('Previous Modified Time:', prev.mtime); 
-//     console.log('Current Modified Time:', curr.mtime);
-//  });
-
-
-//  fs.watch(file, (eventType, filename) => { 
-//     if (filename) { 
-//         console.log(`${filename} ${eventType}`);
-//      } });
-
-// fs.stat(path.join(__dirname, file), (err, info)=>{
-//     if(err) console.error(err);
-//     else console.log(info);
-    
-    
-// })
+fs.watchFile(file, (curr, prev) => { 
+    console.log('File Changed'); 
+    console.log('Previous Modified Time:', prev.mtime); 
+    console.log('Current Modified Time:', curr.mtime);
+ });
 
 
+ fs.watch(file, (eventType, filename) => { 
+    if (filename) { 
+        console.log(`${filename} ${eventType}`);
+     } });
 
-// fs.access('/jyfuyf', (err, info)=>{
-//     if(err) console.error(err);
-//     else console.log(true);
+fs.stat(path.join(__dirname, file), (err, info)=>{
+    if(err) console.error(err);
+    else console.log(info);
+    
+    
+})
+
+
+
+fs.access('/jyfuyf', (err, info)=>{
+    if(err) console.error(err);
+    else console.log(true);
     
     
     
-// })
+})
 
 const filePath= path.join(__dirname, '/public/new.txt');
 
 
-// (async function(){
+(async function(){
  
-//     try{
-//        const created= await fs.promises.writeFile(filePath, 'Hello, how are you?')
+    try{
+       const created= await fs.promises.writeFile(filePath, 'Hello, how are you?')
 
-//        console.log('file created...');
+       console.log('file created...');
 
         
-//         const data=  await fs.promises.readFile(filePath, 'utf8')
+        const data=  await fs.promises.readFile(filePath, 'utf8')
         
-//         console.log(data);
+        console.log(data);
         
-//     }catch(err){
-//    console.log(err);
+    }catch(err){
+   console.log(err);
    
-//     }
+    }
 
-// })()
+})()
 
 
 function createFile(path, content){

@@ -34,20 +34,20 @@ function end(param){
 
 }
 
-// start(true).then((data)=>{
-//     return ready(data)
-// }).then((data)=>{
-//     return end(data)
-// }).then((result)=>{
-//     console.log(result);
+start(true).then((data)=>{
+    return ready(data)
+}).then((data)=>{
+    return end(data)
+}).then((result)=>{
+    console.log(result);
     
-// }).catch((Error)=>{
-//     console.log(Error);
+}).catch((Error)=>{
+    console.log(Error);
     
-// }).finally(()=>{
-//     console.log('exit[]');
+}).finally(()=>{
+    console.log('exit[]');
     
-// })
+})
 
 
 const promise1= new Promise((resolve, reject)=>{
@@ -83,34 +83,34 @@ console.log(result);
 
 promiseEmit()
 
-// promise1
-// .then((data)=>{
-//     return promise2
-// })
-// .then((data)=>{
-// return promise3()
-// })
-// .then((result)=>{
-//     console.log(result);
+promise1
+.then((data)=>{
+    return promise2
+})
+.then((data)=>{
+return promise3()
+})
+.then((result)=>{
+    console.log(result);
     
-// }).catch((err)=>{
-//     console.log("Error: " +err);
+}).catch((err)=>{
+    console.log("Error: " +err);
     
-// }).finally(()=>{
-//     console.log('promise exit[]');
+}).finally(()=>{
+    console.log('promise exit[]');
     
-// })
+})
 
 
-// Promise.allSettled([promise1, promise2, promise3()]).then((data)=>{
-//     console.log(data);
+Promise.allSettled([promise1, promise2, promise3()]).then((data)=>{
+    console.log(data);
     
-// }).catch((err)=>{
-//     console.log(err);
+}).catch((err)=>{
+    console.log(err);
     
-// }).finally(()=>{
-//     console.log('thanks for use promise');
+}).finally(()=>{
+    console.log('thanks for use promise');
 
-// })
+})
 
 
