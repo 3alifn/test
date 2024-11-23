@@ -8,7 +8,7 @@
  eventMaker.on('delay', delay);
  
  
-// setTimeout(() => {
-//     eventMaker.emit('delay')
-// }, 3000);
+setTimeout(() => {
+    eventMaker.emit('delay')
+}, 3000);
 

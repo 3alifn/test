@@ -45,20 +45,20 @@ const printReduce= num.reduce((prevNum, currentNum, currentInx)=>{
 }) // return total value
 
 
-// for( let x of num){
-//     console.log(x);
+for( let x of num){
+    console.log(x);
     
-// } // use for only array print
+} // use for only array print
 
-// for( let x in num){
-//        console.log(num[x]);
+for( let x in num){
+       console.log(num[x]);
         
-//  } // use for obj and array print
+ } // use for obj and array print
 
-// for (let x in obj){
-//     console.log(obj[x]);
+for (let x in obj){
+    console.log(obj[x]);
     
-// } // object destructor
+} // object destructor
 
 const newObj= {}
 Object.assign(newObj, obj) // assign and copy obj to newObj
