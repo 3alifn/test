@@ -8,17 +8,25 @@ import path from 'path';
 import { admin_router } from './route/admin-router.js';
 const mysqSlqSession= MySQLStore(session)
 const app= express();
-app.use('/admin', admin_router)
+import cookieParser from 'cookie-parser';
+import bodyParser from 'body-parser';
+import redis from "redis";
+const redisOn= redis.createClient();
+app.use(cookieParser())
+app.use(express.json())
+app.use(bodyParser.urlencoded({extended: true}))
+
 
 export const sqlmap= mysql.createPool({
+    host: "localhost",
     user: 'root',
-    password: '',
+    password: "toor",
     database: 'demodb',
     queueLimit: 0,
     connectionLimit: 10
 })
 
- const sessionStore= new mysqSlqSession(sqlmap)
+const sessionStore= new mysqSlqSession( {}, sqlmap)
 
 app.use(session({
     name: 'demo',
@@ -27,7 +35,7 @@ app.use(session({
     secret: 'pipra',
     store: sessionStore,
     cookie:{
-        maxAge: 24*60*60*1000,
+        maxAge: 10000, //milisecond
         httpOnly: true,
         secure: false,
         path: '/',
@@ -44,30 +52,23 @@ http.createServer((req, res)=>{
     
 }) // ruuning on port 3000
 
-
-
-
-const test= express.Router()
 app.use('*', (req, res, next)=>{
-    console.log('middleware router checked...');
+    // console.log('middleware router checked...');
+    
     next()
 }) // next middleware func
 
-app.use('/test', test)
+
+app.use('/admin', admin_router)
 
 app.get('/', (req, res)=>{
 res.sendFile(path.join(path.resolve(), 'index.html'));
 })
 
-test.get('/', (req, res)=>{
-    res.send('test router working.....')
-   // sent a new error=> throw new Error('404') 
-    })
-
 
 app.use((err, req, res, next)=>{
    console.log(err);
-   
+   next(err)
 }) // error handling func
 
 
