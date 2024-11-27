@@ -1,5 +1,10 @@
 import http from 'http';
 import fs from 'fs';
+import dotenvInit from 'dotenv';
+const dotenv= dotenvInit.config()
+import crypto from "crypto"
+import sjcl from 'sjcl';
+export const cryptoJs= sjcl;
 import express from "express";
 import mysql from "mysql2";
 import session from 'express-session';
@@ -15,7 +20,6 @@ const redisOn= redis.createClient();
 app.use(cookieParser())
 app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}))
-
 
 export const sqlmap= mysql.createPool({
     host: "localhost",
